@@ -1,0 +1,112 @@
+/*element styles*/
+a{
+	text-decoration: none;
+}
+a.navLink{
+	padding: 20px;
+	background: #00A6B3;
+}
+a.navLink:hover{
+	-webkit-animation-name: hover;
+	-webkit-animation-duration: 1s;
+	animation-name:hover;
+	animation-duration: 1s;
+	background: #FFFFFF;
+	color: #00A6B3;
+}
+body{
+	text-align: center;
+}
+footer{
+	text-transform: uppercase;
+	padding: 0 20px;
+    background: #0D2C40;
+	color: white;
+	font-size: 14px;
+	letter-spacing: .08em;
+	font-weight: 500;
+}
+h1,h2,a{
+	font-family: Raleway, Sans-Serif;
+	letter-spacing: 1px;
+}
+h1{
+	margin: 0;
+}
+header{
+	background: #F15B31;
+	padding: 50px 0px 50px 0px;
+	margin-right: 0px;
+}
+img{
+	margin: 40px 8px 0 8px;
+}
+main{
+	width: 850px;
+	margin:35px auto;
+}
+nav{
+	background:#00A6B3; 
+	padding:20px;
+	margin-bottom: 0px;
+}
+p{
+	font-family: "Droid Serif", Serif;
+	line-height: 26px;
+	font-size: 18px;
+}
+/*Classes*/
+.clearfix:after{
+	visibility: hidden;
+	display: block;
+	content: " ";
+	clear:both;
+	height: 0;
+	font-size: 0;
+}
+.colorOne{
+	color: #0D2C40;
+}
+.colorTwo{
+	color: #FFFFFF;
+}
+.copyright{
+	font-family: 'Raleway', Sans-Serif;
+	float: left;
+}
+.fw600{
+	font-weight: 600;
+}
+.links{
+	font-size: 18px;
+}
+.message{
+	font-family: 'Raleway', Sans-Serif;
+	float: right;
+}
+.name{
+	color: #F15B31;
+	font-weight: 700;
+}
+/*IDs*/
+#instructions{
+	font-size: 20px;
+}
+#memoryGame{
+	font-weight: 400;
+	font-size: 45px; 
+}
+
+/*keyframes*/
+@-webkit-keyframes hover{
+	from{background: #00A6B3;
+	   color: #FFFFFF;}
+	to{background: #FFFFFF;
+	     color: #00A6B3;}
+}
+@keyframes hover{
+	from{background: #00A6B3;
+	   color: #FFFFFF;}
+	to{background: #FFFFFF;
+	     color: #00A6B3;}
+}
