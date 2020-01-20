@@ -56,6 +56,9 @@ p{
 	font-size: 18px;
 }
 /*Classes*/
+.disappear{
+	display: none;
+}
 .clearfix:after{
 	visibility: hidden;
 	display: block;
