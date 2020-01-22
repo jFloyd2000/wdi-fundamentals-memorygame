@@ -1,6 +1,5 @@
 /*variables*/
 /*used for the flipCard method*/
-let runAgain = true;
 let cardsInPlay = [];
 let cards = [
   {
@@ -29,15 +28,16 @@ createBoard();
 /*Methods*/
 /**
  * changes the cards image to the front of the card
- * @param img the img tag to change
+ * and determines the winner if 
  */
-function flipCard(img)
+function flipCard()
 {
+	console.log("JFDBG: two");
 	if(cardsInPlay.length <= 1)
 	{
-		let cardID = img.getAttribute('data-id');
-		img.setAttribute('src', cards[cardID].cardImage);
-		cardsInPlay.push(img);
+		let cardID = this.getAttribute('data-id');
+		this.setAttribute('src', cards[cardID].cardImage);
+		cardsInPlay.push(this);
 		if(cardsInPlay.length === 2)
 		{
 			if(cardsInPlay[0].getAttribute('data-id') === cardsInPlay[1].getAttribute('data-id'))
@@ -45,21 +45,11 @@ function flipCard(img)
 				alert("You got a match");
 				return;
 			}
-			alert("You didnt get a match");
+			else
+			{
+			  alert("You didnt get a match");
+			}
 		}
-	}
-}
-/**
- * Determines the winner
- * @param cardA the first card to be evaluated
- * @param cardB the second card to be evaluated
- */
-function endGame(cardA, cardB){
-	if(cardA === cardB){
-		alert("You Win");
-	}
-	else{
-		alert("You lose");
 	}
 }
 /**
@@ -71,7 +61,9 @@ function createBoard(){
 	  let img = document.createElement('img');
 	  img.setAttribute('src', 'images/back.png');
 	  img.setAttribute('data-id', i);
-	  img.addEventListener('click', flipCard(img));
+	  console.log("JFDBG: one");
+	  img.addEventListener('click', flipCard);
+	  console.log("JFDBG: three");
 	  document.getElementById('gameboard').appendChild(img);
     }
 }
