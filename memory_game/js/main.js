@@ -1,6 +1,7 @@
 /*variables*/
 /*used for the flipCard method*/
 let runAgain = true;
+let cardsInPlay = [];
 let cards = [
   {
   	rank: "Queen",
@@ -26,19 +27,26 @@ let cards = [
 /*Commands*/
 createBoard();
 /*Methods*/
-Instructions
 /**
  * changes the cards image to the front of the card
  * @param img the img tag to change
  */
 function flipCard(img)
 {
-	let cardID = img.getAttribute('data-id');
-	console.log("JFDBG:flipCard ran");
-	if(runAgain)
+	if(cardsInPlay.length <= 1)
 	{
-		runAgain = false;
-		img.setAttribute(cards[cardID].cardImage);
+		let cardID = img.getAttribute('data-id');
+		img.setAttribute('src', cards[cardID].cardImage);
+		cardsInPlay.push(img);
+		if(cardsInPlay.length === 2)
+		{
+			if(cardsInPlay[0].getAttribute('data-id') === cardsInPlay[1].getAttribute('data-id'))
+			{
+				alert("You got a match");
+				return;
+			}
+			alert("You didnt get a match");
+		}
 	}
 }
 /**
@@ -59,11 +67,11 @@ function endGame(cardA, cardB){
  * element
  */
 function createBoard(){
-	for (var i = 0; i < cards.length; i++) {
+	for (let i = 0; i < cards.length; i++) {
 	  let img = document.createElement('img');
 	  img.setAttribute('src', 'images/back.png');
 	  img.setAttribute('data-id', i);
-	  img.addEventListener('click', flipCard(this));
+	  img.addEventListener('click', flipCard(img));
 	  document.getElementById('gameboard').appendChild(img);
     }
 }
