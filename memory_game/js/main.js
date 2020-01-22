@@ -1,6 +1,7 @@
 /*variables*/
 /*used for the flipCard method*/
 let cardsInPlay = [];
+const cardBackSrc = 'images/back.png';
 let cards = [
   {
   	rank: "Queen",
@@ -64,4 +65,14 @@ function createBoard(){
 	  img.addEventListener('click', flipCard);
 	  document.getElementById('gameboard').appendChild(img);
     }
+}
+function reset()
+{
+	for (var i = 0; i < cardsInPlay.length; i++) {
+		cardsInPlay[i].setAttribute('src', cardBackSrc);
+	    let a = Math.floor(Math.random() * 4);
+	    cardsInPlay[i].setAttribute('data-id', a);
+
+	}
+	cardsInPlay = [];
 }
