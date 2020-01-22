@@ -32,7 +32,6 @@ createBoard();
  */
 function flipCard()
 {
-	console.log("JFDBG: two");
 	if(cardsInPlay.length <= 1)
 	{
 		let cardID = this.getAttribute('data-id');
@@ -60,10 +59,9 @@ function createBoard(){
 	for (let i = 0; i < cards.length; i++) {
 	  let img = document.createElement('img');
 	  img.setAttribute('src', 'images/back.png');
-	  img.setAttribute('data-id', i);
-	  console.log("JFDBG: one");
+	  let a = Math.floor(Math.random() * 4);
+	  img.setAttribute('data-id', a);
 	  img.addEventListener('click', flipCard);
-	  console.log("JFDBG: three");
 	  document.getElementById('gameboard').appendChild(img);
     }
 }
